@@ -9,7 +9,7 @@ Early development. See [ROADMAP.md](ROADMAP.md) for planned work.
 
 ## Install
 ```sh
-cargo install --git https://github.com/YOUR_USERNAME/pxl
+cargo install --git https://github.com/r7shekhawat/pxl
 ```
 
 ## Usage

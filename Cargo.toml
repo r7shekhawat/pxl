@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 description = "A fast batch image processor for the command line"
 license = "MIT"
-repository = "https://github.com/YOUR_USERNAME/pxl"
+repository = "https://github.com/r7shekhawat/pxl"
 
 [dependencies]
 clap = { version = "4", features = ["derive"] }
