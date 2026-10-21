@@ -1,0 +1,21 @@
+[package]
+name = "pxl"
+version = "0.1.0"
+edition = "2021"
+description = "A fast batch image processor for the command line"
+license = "MIT"
+repository = "https://github.com/YOUR_USERNAME/pxl"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+rayon = "1"
+image = "0.25"
+anyhow = "1"
+indicatif = "0.17"
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }
+
+[[bench]]
+name = "resize"
+harness = false

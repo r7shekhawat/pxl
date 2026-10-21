@@ -1,0 +1,7 @@
+/target
+**/*.rs.bk
+/converted
+/samples
+benches/fixtures/*.png
+!benches/fixtures/.gitkeep
+.env
