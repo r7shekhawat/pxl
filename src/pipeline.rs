@@ -21,7 +21,11 @@ pub fn collect_images(input: &str) -> Result<Vec<PathBuf>> {
 
 fn is_image(p: PathBuf) -> bool {
     matches!(
-        p.extension().and_then(|e| e.to_str()).unwrap_or("").to_lowercase().as_str(),
+        p.extension()
+            .and_then(|e| e.to_str())
+            .unwrap_or("")
+            .to_lowercase()
+            .as_str(),
         "png" | "jpg" | "jpeg" | "webp"
     )
 }
@@ -29,9 +33,7 @@ fn is_image(p: PathBuf) -> bool {
 pub fn run_resize(input: &str, out: &str, width: u32) -> Result<()> {
     let files = collect_images(input)?;
     let pb = ProgressBar::new(files.len() as u64);
-    pb.set_style(ProgressStyle::with_template(
-        "{bar:40} {pos}/{len} {msg}",
-    )?);
+    pb.set_style(ProgressStyle::with_template("{bar:40} {pos}/{len} {msg}")?);
     fs::create_dir_all(out)?;
     files.par_iter().for_each(|f| {
         if let Err(e) = crate::ops::resize::resize_file(f, Path::new(out), width) {
